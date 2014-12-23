@@ -23,7 +23,7 @@ void setDenominator(int denominator) {
 // Creates a fraction given a numerator and denominator respectively
 public Fraction (int a,int b)
 {
-	System.out.println("Case a/b:"+a+"/"+b);
+	//System.out.println("Case a/b:"+a+"/"+b);
 	// This automatically reduces the fraction.
 	int gcd=gCD(a,b);
 	if (gcd==0)
@@ -39,7 +39,7 @@ public Fraction (int a,int b)
 // Since the denominator is 1 now reduction is needed
 public Fraction (int a)
 {
-	System.out.println("Case a/1:"+a+"/1");
+	//System.out.println("Case a/1:"+a+"/1");
 	setNumerator(a);
 	setDenominator(1);
 	
@@ -47,7 +47,7 @@ public Fraction (int a)
 //Defaults fractions to 0/1 if no values are inputed
 public Fraction()
 {
-	System.out.println("Case 0/1");
+	//System.out.println("Case 0/1");
 	setNumerator(0);
 	setDenominator(1);
 }
@@ -92,7 +92,7 @@ public  Fraction reciprocal()
 	}
 	else
 		{
-		System.out.print("0 has no reciprocal");
+		//System.out.print("0 has no reciprocal");
 		c =new Fraction(0,1);
 		}
 	return c;
