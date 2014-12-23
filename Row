@@ -4,6 +4,7 @@ public class Row{
 	Fraction [] fractions;
 	// Constructs a row given an array of fractions
 	public Row (Fraction [] list){
+		//System.out.println("New row of created using a list of fractions");
 fractions=list;
 col=list.length;
 	}
@@ -11,22 +12,30 @@ col=list.length;
 	//Each fraction will default to 0/1
 	public Row (int length)
 	{
+		//System.out.println("New row of zeros created using the int: "+length);
 		col=length;
 		fractions=new Fraction [col];
 	}
 	// Creates a row with only one entry, the 0/1 fraction.
 	public Row ()
 	{
+		//System.out.println("New row of zeros created using nothing");
 		col=1;
 		fractions=new Fraction [1];
+		fractions[0]=new Fraction();
 	}
 	// Creates a row of length columns that is full zeros except
 	//for the chosen location which has the given value.
 	//This is useful for creation of scaler multiples of the identity matrix.
 	public Row (int location, Fraction value, int length)
 	{
+		//System.out.println("New row of zeros and 1 value created using the location int: "+location+"the fraction:"+value.getNumerator()+"/"+value.getDenominator()+"and the length int"+length);
 		col=length;
 		fractions=new Fraction [length];
+		for (int i=0;i<length;i++)
+		{
+		fractions[i]=new Fraction();
+		}
 		fractions[location]=value;
 	}
 	//Adds another row to the row in question.
@@ -37,11 +46,9 @@ col=list.length;
 		{
 	for (int i=0;i<col;i++)
 	{
-		/*System.out.println("index"+i);
-		System.out.println("subtracting"+a.fractions[i].getNumerator()+
-				"/"+a.fractions[i].getDenominator()+" from "+ this.fractions[i].getNumerator()+
-				"/"+this.fractions[i].getDenominator());
-				*/
+		//System.out.println("index"+i);
+		//System.out.println("subtracting"+a.fractions[i].getNumerator()+"/"+a.fractions[i].getDenominator()+" from "+ this.fractions[i].getNumerator()+"/"+this.fractions[i].getDenominator());
+				
 		Fraction temp=a.fractions[i].negativeFraction();
 		c.fractions[i]=Fraction.addFraction(this.fractions[i],temp);
 	}
