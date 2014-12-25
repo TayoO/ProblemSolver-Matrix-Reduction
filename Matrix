@@ -218,6 +218,20 @@ public void subtractMatrix(Matrix a)
 		System.out.println("Can only subtract matrices of the same dimensions.");
 	}
 }
+public void addMatrix(Matrix a)
+{
+	if (rowNum==a.rowNum && rows[0].col==a.rows[0].col)
+	{
+		for (int i=0; i<rowNum;i++)
+		{
+			rows[i].addRows(a.rows[i]);
+		}
+	}
+	else
+	{ System.out.println("Rows and columns of first matrix: ("+rowNum+","+rows[0].col+") of second ("+a.rowNum+","+a.rows[0].col+")");
+		System.out.println("Can only subtract matrices of the same dimensions.");
+	}
+}
 // This test if a given value is an eigenvalue of the original matrix.
 public static boolean eigenValue(Matrix a, Fraction test)
 {
@@ -261,58 +275,5 @@ notSwapped--;
 	return target;
 
 }
-*/
-//Originally the matrix was composed of 2d arrays of fractions directly, not arrays of rows
-/*
-// Every Matrix is defined by a 2d array of fractions. 
-	//The length of each dimension stored as rows and columns respectively.
-int rows;
-int columns;
-private Fraction [][] fractions;
 
-Fraction [][] getFractions() {
-	return fractions;
-}
-
-void setFractions(Fraction [][] fractions) {
-	this.fractions = fractions;
-}
-
-// Creates a Matrix given an array of fractions
-public Matrix (Fraction [][] input)
-{
-rows=input.length;
-columns=input[0].length;
-setFractions(input);
-
-}
-
-
-// Creates a matrix with a rows and b columns with default fractions (0,1)
- Matrix(int a, int b)
- {
-	 rows=a;
-	 columns=b;
-	 fractions=new Fraction[rows][columns];
-for (int i=0; i<rows; i++)
-{
-	for (int j=0; j<columns; j++)
-	{
-		fractions[i][j]=new Fraction();
-	}
-}
- }
-
-// Multiplies the targeted row in the matrix by a rational number expressed as a fraction.
-public void multiplyRow(int target, Fraction a)
-{
-	for (int i=0;i<columns; i++)
-	{
-		fractions[target][i]=Fraction.multiplyFraction(fractions[target][i],a);
-	}
-}
-public void addRows(int target, int adder)
-{
-}
-*/
 }
