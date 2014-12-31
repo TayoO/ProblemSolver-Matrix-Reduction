@@ -134,4 +134,13 @@ col=list.length;
 		this.fractions=temp.fractions;
 	return i;
 }
+	public void printRow()
+	{
+  for (int i=0; i<col;i++)
+  {
+	fractions[i].printFraction(); 
+  }
+		
+		
+	}
 }
