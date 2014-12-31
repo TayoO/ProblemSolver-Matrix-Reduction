@@ -201,6 +201,7 @@ public boolean reduceRowEchelonMatrix ()
 				rows[j]=rows[j].subtractRows(rows[i].multiplyRows(constant));
 		}
 		}
+	printMatrix();
 	}
 	return (rank==rowNum);
 }
@@ -238,6 +239,14 @@ public static boolean eigenValue(Matrix a, Fraction test)
 Matrix temp=new Matrix(test, a.rowNum);
 a.subtractMatrix(temp);
 return !a.reduceRowEchelonMatrix();
+}
+public void printMatrix()
+{
+	for (int i=0; i<rowNum;i++)
+	{
+		System.out.println();
+		rows[i].printRow();
+	}
 }
 /*
 public Row reducerRow()
