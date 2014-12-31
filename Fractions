@@ -128,5 +128,9 @@ public static int gCD(int y, int x)
 	}
 	return max;
 }
-
+// Prints out the fraction
+public void printFraction()
+{
+	System.out.print(getNumerator()+"/"+getDenominator()+" ");
+}
 }
